@@ -43,11 +43,20 @@ public class MyDispatchServlet extends HttpServlet {
         doScanner(properties.getProperty("scan-package"));
         //3,put beans into ioc container
         doInstance();
+        //4,get beans from iocMap and inject them
         doAutowired();
     }
 
-
-
+    /**
+     * first char to lower
+     * @param str
+     * @return
+     */
+    private String toLowerFirstCase(String str) {
+        char[] charArray = str.toCharArray();
+        charArray[0] += 32;
+        return String.valueOf(charArray);
+    }
 
     /**
      * 1,load properties file into RAM,and we use MyDispatchServlet.properties to store them
@@ -94,7 +103,7 @@ public class MyDispatchServlet extends HttpServlet {
             }
         }
     }
-    //4、将iocMap里的类依赖注入
+    //4,
 
     /**
      * 3,put beans into ioc container
@@ -117,7 +126,11 @@ public class MyDispatchServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 log.info("put "+beanName+" into container");
-                iocMap.put(beanName,o);
+                int len=beanName.split("\\.").length;
+                if(len>=1){
+                    iocMap.put(this.toLowerFirstCase(beanName.split("\\.")[len-1]) ,o);
+                }
+
             }else if(aClass.isAnnotationPresent(MyService.class)){
 
 
@@ -126,6 +139,9 @@ public class MyDispatchServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 4,get beans from iocMap and inject them
+     */
     private void doAutowired() {
         for (Map.Entry<String,Object> entry: iocMap.entrySet()){
             Field[] fields = entry.getValue().getClass().getDeclaredFields();
@@ -133,7 +149,14 @@ public class MyDispatchServlet extends HttpServlet {
                 if(!field.isAnnotationPresent(MyAutowired.class)){
                     continue;
                 }
-
+                //we can set it if the field is private
+                field.setAccessible(true);
+                try {
+                    field.set(entry.getValue(),iocMap.get(field.getName()));
+                    log.info(entry.getValue().toString()+"  "+iocMap.get(field.getName()));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
