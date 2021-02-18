@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="myweb">
+    <output-path>$PROJECT_DIR$/out/artifacts/myweb</output-path>
+    <root id="archive" name="myweb.war">
+      <element id="javaee-facet-resources" facet="mySpring/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="mySpring" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
