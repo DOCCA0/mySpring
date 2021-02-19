@@ -61,19 +61,6 @@ public class MyDispatchServlet extends HttpServlet {
 
 
     /**
-     * first char to lower
-     * @param str
-     * @return
-     */
-    private String toLowerFirstCase(String str) {
-        char[] charArray = str.toCharArray();
-        charArray[0] += 32;
-        return String.valueOf(charArray);
-    }
-
-
-
-    /**
      * 1,load properties file into RAM,and we use MyDispatchServlet.properties to store them
      * @param contextConfigLocation file path of the properties file
      */
@@ -143,11 +130,6 @@ public class MyDispatchServlet extends HttpServlet {
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
-//                int len=beanName.split("\\.").length;
-//                if(len>=1){
-//                    log.info("put "+beanName+" into container");
-//                    iocMap.put(this.toLowerFirstCase(beanName.split("\\.")[len-1]) ,o);
-//                }
                 log.info("put "+beanName+" into container");
                 iocMap.put(beanName,o);
             }else if(aClass.isAnnotationPresent(MyService.class)){
@@ -236,7 +218,7 @@ public class MyDispatchServlet extends HttpServlet {
         }
         Method method = handlerMapping.get(url);
         try {
-            method.invoke(iocMap.get(toLowerFirstCase(method.getDeclaringClass().getSimpleName())),req,resp);
+            method.invoke(iocMap.get(method.getDeclaringClass().getName()),req,resp);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
