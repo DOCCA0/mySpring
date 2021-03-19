@@ -1,0 +1,30 @@
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:68) ]
+INFO:load properties file success
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:69) ]
+INFO:properties file details：{scan-package=com.myDemo}
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:100) ]
+INFO:beanListName add:com.myDemo.School
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:100) ]
+INFO:beanListName add:com.myDemo.Student
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doInstance(MyDispatchServlet.java:127) ]
+INFO:put com.myDemo.School into container
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doInstance(MyDispatchServlet.java:127) ]
+INFO:put com.myDemo.Student into container
+2021-02-16 13:06:45 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doAutowired(MyDispatchServlet.java:155) ]
+INFO:School{student=com.myDemo.Student@75881071}  com.myDemo.Student@75881071
+2021-02-16 23:40:23 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:72) ]
+INFO:load properties file success
+2021-02-16 23:40:23 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:73) ]
+INFO:properties file details：{scan-package=com.myDemo}
+2021-02-16 23:40:23 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:104) ]
+INFO:beanListName add:src\main\java\com\myDemo\School
+2021-02-16 23:40:23 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:104) ]
+INFO:beanListName add:src\main\java\com\myDemo\Student
+2021-02-16 23:41:39 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:72) ]
+INFO:load properties file success
+2021-02-16 23:41:39 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doLoadConfig(MyDispatchServlet.java:73) ]
+INFO:properties file details：{scan-package=com.myDemo}
+2021-02-16 23:41:39 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:104) ]
+INFO:beanListName add:src\main\java\com\myDemo\School
+2021-02-16 23:41:39 下午 [Thread: main][ Class:com.mySpring.myServlet.MyDispatchServlet >> Method: com.mySpring.myServlet.MyDispatchServlet.doScanner(MyDispatchServlet.java:104) ]
+INFO:beanListName add:src\main\java\com\myDemo\Student
