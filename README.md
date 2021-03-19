@@ -6,7 +6,7 @@
 
 项目分为2个大板块：IOC和handlerMapping，分别实现控制反转和把url和类或方法关联起来。项目会用到servlet，因为涉及到web，如果只关注最核心的springIoc的地方，是可以不用servlet这个包的。
 
-![image-20210228223555019](pic\image-20210228223555019.png)
+![image-20210228223555019](pic/image-20210228223555019.png)
 
 ## IOC
 
